@@ -17,15 +17,18 @@ ul {
 h1 {
   margin: 0;
 }
-
+main {
+  padding-top: 100px;
+}
 
 /* header */
 .header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #004c8c;
-  
+  position: fixed;
 }
 
 /* navbar */
@@ -41,7 +44,11 @@ nav a {
   display: flex;
   justify-content: space-around;
 }
+.panier-icon {
+  color: #ffffff;
+}
 
+/* productsList component */
 .products-list {
   width: 80%;
   margin: 0 auto;
@@ -49,6 +56,7 @@ nav a {
   flex-wrap: wrap;
   justify-content: left;
 }
+/* product component */
 .product {
   width: 28%;
   border: 2px solid burlywood;

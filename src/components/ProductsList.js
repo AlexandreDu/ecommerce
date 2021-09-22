@@ -8,32 +8,29 @@ const ProductsList = (props) => {
 
     const [products, setProducts] = useState([])
 
-    useEffect(() => {
-        fetch("https://fakestoreapi.com/products/category/" + category)
-        .then(response => response.json())
-        .then(response => {
-            console.log(response)
-            setProducts(response)
-        })
-        .catch(err => err)
-    }, [])
-
-    const test = () => {
-        props.loadProducts()
-
-    }
+    
+  
+ 
     const getAllProductsFromCat = () => {
-        return products.map(product => {
+
+        console.log("props.produits", props.produits.productsAll.data)
+        const productsCopyFiltered = [...props.produits.productsAll.data].filter(product => {
+            console.log(product.category === props.category)
+            return product.category === props.category
+        })
+        console.log("productsCopy", productsCopyFiltered)
+        return productsCopyFiltered.map(product => {
             return (
-                <Product key={product.id} title={product.title} imageSrc={product.image} description={product.description} rate={product.rate} price={product.price}/>
+                <Product key={product.id} title={product.title} imageSrc={product.image} description={product.description} rating={product.rating} price={product.price} product={product}/>
             )
         })
     }
 
     return (
         <div className="products-list">
-            
+            {props.produits.productsAll.data !== undefined && <>
             {getAllProductsFromCat()}
+            </>}
         </div>
     )
 }

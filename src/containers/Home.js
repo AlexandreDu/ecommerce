@@ -1,15 +1,29 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import {connect} from 'react-redux';
+import { loadProducts, loadProductsJewelery } from '../actions/products/productsAction';
+const Home = (props) => {
 
-const Home = () => {
-
-
+  
 
     return (
-        <p>coucou</p>
+        <div>
+
+        </div>
     )
 
 }
 
 
-export default Home
 
+const mapStateToProps = (store) => {
+    return {
+        produits: store.productsAll,
+
+    }
+  }
+  const mapDispatchToProps = {
+      loadProducts,
+      loadProductsJewelery
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
