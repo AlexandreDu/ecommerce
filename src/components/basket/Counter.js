@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
-import { addProductToBasket } from '../../actions/basket/basketAction';
+import { addProductToBasket, diminishProductToBasket } from '../../actions/basket/basketAction';
 
-const Counter = ({panier, product, addProductToBasket}) => {
+const Counter = ({panier, product, addProductToBasket, diminishProductToBasket}) => {
     console.log("dans counter : props.product.quantity", product.quantity)
     console.log("dans counter: props.product :", product)
 
@@ -32,14 +32,14 @@ const Counter = ({panier, product, addProductToBasket}) => {
                 +
               {/* <i className="fa fa-plus-circle" aria-hidden="true" /> */}
             </button>
-            {/* <button
+            <button
               className="btn btn-info m-2"
-              onClick={() => onDecrement(counter)}
-              disabled={counter.value === 0 ? "disabled" : ""}
+              onClick={() => diminishProductToBasket(product, panier.basket)}
+              disabled={product.quantity === 0 ? "disabled" : ""}
             >
                 -
          
-            </button> */}
+            </button>
             {/* <button
               className="btn btn-danger"
               onClick={() => onDelete(counter.id)}
@@ -65,7 +65,8 @@ const mapStateToProps = (store) => {
   }
 }
 const mapDispatchToProps = {
-  addProductToBasket
+  addProductToBasket,
+  diminishProductToBasket
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
