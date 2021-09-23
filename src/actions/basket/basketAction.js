@@ -8,21 +8,22 @@ export const addProductToBasket = (newProduct, basket)=>{
     return function(dispatch) {
         
         // console.log("basket dans action", basket.basket)
-        let isProductAlreadyInBasket = basket.basket.findIndex(product => product.id === newProduct.id)
+        console.log("dans basketAction, basket : ", basket)
+        let isProductAlreadyInBasket = basket.findIndex(product => product.id === newProduct.id)
         // if the product is not in the basket yet, we add the quantity property and add the product to the basket
         if(isProductAlreadyInBasket === -1) {
             newProduct.quantity = 1
-            basket.basket.push(newProduct) 
+            basket.push(newProduct) 
         } else {
             // if the product is already in the basket, we add the quantity
             // console.log(basket.basket[isProductAlreadyInBasket])
-            basket.basket[isProductAlreadyInBasket].quantity += 1
+            basket[isProductAlreadyInBasket].quantity += 1
         }
           
                
         dispatch({
             type: MODIFY_BASKET,
-            payload: basket.basket
+            payload: basket
         })
            
     }

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux';
-import { loadProducts, loadProductsJewelery } from '../actions/products/productsAction';
+import { loadProducts } from '../actions/products/productsAction';
 const Home = (props) => {
 
   
@@ -22,8 +22,7 @@ const mapStateToProps = (store) => {
     }
   }
   const mapDispatchToProps = {
-      loadProducts,
-      loadProductsJewelery
+      loadProducts
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

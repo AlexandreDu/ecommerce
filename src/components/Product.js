@@ -6,8 +6,8 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
 
     // console.log("props.panier ", props.panier)
     const handleClickAdd = (product, basket) => {
-        console.log(product, basket)
-        addProductToBasket(product, basket)
+        console.log("dans product, product et basket : ", product, basket)
+        addProductToBasket(product, basket.basket)
     }   
 
     return (

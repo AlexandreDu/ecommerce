@@ -9,7 +9,7 @@ function calculateTotalAmount(basket) {
     let totalAmount = 0;
 
     basket.forEach(product => {
-        console.log(product.price * product.quantity)
+        // console.log(product.price * product.quantity)
         totalAmount += product.price * product.quantity
     })
     return totalAmount
@@ -28,7 +28,7 @@ export default function BasketReducer(state = initialState, action) {
         case MODIFY_BASKET:
             let totalPrice = calculateTotalAmount(action.payload)
             let totalQuantity = calculateTotalQuantity(action.payload)
-            console.log("totalPrice ", totalPrice)
+            // console.log("totalPrice ", totalPrice)
             return {basket: action.payload, totalPrice: totalPrice, totalQuantity: totalQuantity}
         break;
         

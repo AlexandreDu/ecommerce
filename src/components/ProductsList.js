@@ -6,19 +6,19 @@ import { loadProducts } from '../actions/products/productsAction';
 
 const ProductsList = (props) => {
 
-    const [products, setProducts] = useState([])
+  
 
     
   
  
     const getAllProductsFromCat = () => {
 
-        console.log("props.produits", props.produits.productsAll.data)
+        // console.log("props.produits", props.produits.productsAll.data)
         const productsCopyFiltered = [...props.produits.productsAll.data].filter(product => {
-            console.log(product.category === props.category)
+            // console.log(product.category === props.category)
             return product.category === props.category
         })
-        console.log("productsCopy", productsCopyFiltered)
+        // console.log("productsCopy", productsCopyFiltered)
         return productsCopyFiltered.map(product => {
             return (
                 <Product key={product.id} title={product.title} imageSrc={product.image} description={product.description} rating={product.rating} price={product.price} product={product}/>

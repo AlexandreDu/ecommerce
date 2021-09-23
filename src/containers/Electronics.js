@@ -4,9 +4,6 @@ import ProductsList from '../components/ProductsList'
 const Electronics = () => {
 
 
-
-    
-
     return (
         <>
             <ProductsList category={"electronics"} />

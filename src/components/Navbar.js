@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-const Navbar = (panier) => {
+const Navbar = (props) => {
 
 
     return (
@@ -21,8 +21,8 @@ const Navbar = (panier) => {
                 </ul>
             </nav>
             <div className="">
-                {console.log("panier.panier.totalQuantity", panier.panier.totalQuantity)}
-                <Link to={"/panier"}><div className="panier-icon"><FontAwesomeIcon icon={faShoppingCart} /> {panier.panier.totalQuantity === undefined ? 0 : panier.panier.totalQuantity}</div></Link>
+
+                <Link to={"/panier"}><div className="panier-icon"><FontAwesomeIcon icon={faShoppingCart} /> {props.panier.totalQuantity === undefined ? 0 : props.panier.totalQuantity}</div></Link>
             </div>
         </header>
     )
