@@ -58,9 +58,14 @@ nav a {
 }
 /* product component */
 .product {
-  width: 28%;
-  border: 2px solid burlywood;
+  width: 32.5%;
+  height: 550px;
+  border: 1px solid #004c8c;
+  border-radius: 2px;
+  background-color: #b2d0ed;
   padding: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 .product-img-wrapper {
   height: 180px;
@@ -73,5 +78,45 @@ nav a {
   max-width: 150px;
   max-height: 150px;
   margin: 0 auto;
-  
 }
+.product-price {
+  font-weight: bold;
+}
+.product-cta {
+  display: block;
+  width: 40%;
+  padding: 15px;
+  margin: 0 auto;
+  background-color: #004c8c;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+/* css for the "plus circle" effect when adding a product in the cart */
+.product-add {
+  display: none;
+}
+.product-cta-on-exit {
+  display:block;
+  opacity: 0;
+}
+.product-cta-on-exit-active {
+  display:block;
+  margin-left: 49%;
+  margin-top: 15px;
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.product-cta-on-exit-done {
+  display:block;
+  margin-left: 49%;
+  margin-top: 15px;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+
+

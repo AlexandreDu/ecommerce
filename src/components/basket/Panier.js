@@ -9,22 +9,22 @@ const Panier = ({panier}) => {
     
     return (
       <div>
+        {panier.basket.length > 0 
+        ? panier.basket.map((product, index) => {
 
-        {panier.basket.map((product, index) => {
-          // console.log(product)
           return (
 
             <Counter
               key={index}
               product={product}
             />
-
           ) 
-        }
-         
-         
-          
-        )}
+        })        
+        : <div>
+            <p className="basket-alert">Votre panier est vide.</p>
+          </div>
+      }
+        
       </div>
     );
 }
