@@ -15,12 +15,15 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
       <div>
         <div className="">
           <div className="">
-            <span style={{ fontSize: 24 }} className="">
+            <span className="">
               {product.title}
             </span>
           </div>
+          <div>
+            <img src={product.image} alt={product.title}/>
+          </div>
           <div className="">
-            <span style={{ fontSize: 24 }} className="">
+            <span className="">
               {formatCount()}
             </span>
           </div>
