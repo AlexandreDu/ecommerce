@@ -9,25 +9,31 @@ const Panier = ({panier}) => {
   console.log("voici la panier dans counters :", panier.basket)
     
     return (
-      <div className="basket-wrapper">
-        {panier.basket.length > 0 
-        ? panier.basket.map((product, index) => {
+      <>
+        <div className="basket-wrapper">
+          {panier.basket.length > 0 
+          ? panier.basket.map((product, index) => {
 
-          return (
+            return (
 
-            <Counter
-              key={index}
-              product={product}
-            />
-          ) 
-        })        
-        : <div>
-            <p className="basket-alert">Votre panier est vide.</p>
-          </div>
-      }
+              <Counter
+                key={index}
+                product={product}
+              />
+            ) 
+          })        
+          : <div>
+              <p className="basket-alert">Votre panier est vide.</p>
+            </div>
+        }
+        </div>
+        {panier.totalPrice > 0 && 
+        <div className="total-price-basket-wrapper">
+          <span className="total-price-basket">Prix total : {panier.totalPrice.toFixed(2)}€</span>
+        </div>}
         
-      </div>
-    );
+      </>
+    )
 }
 
 const mapStateToProps = (store) => {

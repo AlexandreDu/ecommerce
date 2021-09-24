@@ -43,11 +43,14 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
           
               </span>
             </div>
-
+            
+          </div>
+          <div className="product-price-wrapper">
+              <p>prix: {product.price * product.quantity}€</p>
           </div>
         </div>
       </>
-    );
+    )
   
 
  

@@ -21,14 +21,15 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
     
     return (
         <div className="product">
-            {console.log("panier", panier)}
-            <h3>{title}</h3>
+            <div className="product-title">
+                <h3>{title}</h3>
+            </div>
             <div className="product-img-wrapper">
                 <img className="product-img" src={imageSrc} alt="produit"/>
             </div>
             <div className="product-description">{description.length > 180 ? description.substring(0, 180) + "..." : description}</div>
             <p>{rating.rate} /5</p>
-            <p className="product-price">{price} €</p>
+            <p className="product-price">{price.toFixed(2)} €</p>
             <div>
                 <span className="product-cta" onClick={() => {handleClickAdd(product, panier)}}>Ajouter au panier</span>
                 <CSSTransition
