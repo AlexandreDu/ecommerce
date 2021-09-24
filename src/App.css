@@ -216,3 +216,30 @@ nav a {
   border-top: 2px solid #ff1744;
   color: #ff1744;
 }
+
+
+
+
+@media screen and (max-width: 1367px) {
+  .products-list {
+    width: 80%;
+
+  }
+  /* product component */
+  .product {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .products-list {
+    justify-content: center;
+
+  }
+  .product {
+    width: 80%;
+  }
+
+  
+
+}
