@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
 import { addProductToBasket, diminishProductToBasket } from '../../actions/basket/basketAction';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlusCircle,faMinusCircle } from '@fortawesome/free-solid-svg-icons'
 const Counter = ({panier, product, addProductToBasket, diminishProductToBasket}) => {
     console.log("dans counter : props.product.quantity", product.quantity)
     console.log("dans counter: props.product :", product)
@@ -12,47 +13,40 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
     };
 
     return (
-      <div>
-        <div className="">
-          <div className="">
-            <span className="">
-              {product.title}
-            </span>
+      <>
+        <div className="product-basket-wrapper">
+          <div className="product-basket-image-wrapper">
+              <img className="product-basket-image" src={product.image} alt={product.title}/>
           </div>
-          <div>
-            <img src={product.image} alt={product.title}/>
-          </div>
-          <div className="">
-            <span className="">
-              {formatCount()}
-            </span>
-          </div>
-          <div className="">
-            <button
-              className=""
-              onClick={() => addProductToBasket(product, panier.basket)}
-            >
-                +
-              {/* <i className="fa fa-plus-circle" aria-hidden="true" /> */}
-            </button>
-            <button
-              className="btn btn-info m-2"
-              onClick={() => diminishProductToBasket(product, panier.basket)}
-              disabled={product.quantity === 0 ? "disabled" : ""}
-            >
-                -
-         
-            </button>
-            {/* <button
-              className="btn btn-danger"
-              onClick={() => onDelete(counter.id)}
-            >
-                X
-        
-            </button> */}
+          <div className="product-basket-infos-warpper">
+            <div className="product-basket-tile">
+              <span className="">
+                {product.title}
+              </span>
+            </div>           
+            <div className="product-basket-quantity">
+              <span className="">
+                Quantité : {formatCount()}
+              </span>
+              <span
+                className="product-basket-button"
+                onClick={() => addProductToBasket(product, panier.basket)}
+              >
+                 <FontAwesomeIcon icon={faPlusCircle} />
+              </span>
+              <span
+                className="product-basket-button"
+                onClick={() => diminishProductToBasket(product, panier.basket)}
+                disabled={product.quantity === 0 ? "disabled" : ""}
+              >
+                  <FontAwesomeIcon icon={faMinusCircle} />
+          
+              </span>
+            </div>
+
           </div>
         </div>
-      </div>
+      </>
     );
   
 

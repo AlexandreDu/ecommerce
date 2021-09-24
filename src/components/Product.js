@@ -14,11 +14,6 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
     // console.log("props.panier ", props.panier)
     const handleClickAdd = (product, basket) => {
 
-        // const productAddedEffectCurrent = productAddedEffectRef.current
-        // productAddedEffectCurrent.classList.add('product-cta-on')
-        // window.setTimeout(() => {
-        //     productAddedEffectCurrent.classList.remove('product-cta-on')
-        // }, 1000)
 
         setEffectIsVisible(true)
         addProductToBasket(product, basket.basket)

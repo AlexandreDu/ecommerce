@@ -19,6 +19,7 @@ h1 {
 }
 main {
   padding-top: 100px;
+  background-color: #e1f5fe;
 }
 
 /* header */
@@ -119,4 +120,37 @@ nav a {
   transition: opacity 300ms ease-in;
 }
 
-
+/* basket */
+.basket-wrapper {
+  background-color: #ffffff;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.product-basket-wrapper {
+  border-top: 1px solid #004c8c;
+  display:flex;
+  margin-top: 20px;
+}
+.product-basket-infos-warpper, .product-basket-image-wrapper {
+  padding:20px;
+}
+.product-basket-image-wrapper {
+  width: 100px;
+}
+.product-basket-image {
+  display: block;
+  max-width: 100%;
+}
+.product-basket-button {
+  cursor: pointer;
+}
+.product-basket-tile {
+  font-weight: bold;
+}
+.product-basket-quantity {
+  margin-top: 5px;
+}
+.product-basket-button {
+  margin-top: 5px;
+  margin-left: 5px;
+}
