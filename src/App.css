@@ -232,6 +232,21 @@ nav a {
 }
 
 @media screen and (max-width: 1024px) {
+  .header {
+
+  }
+  /* Navbar */
+  .navbar-links {
+    position: fixed;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vh;
+    z-index: 2;
+    background-color: #ff1744;
+    margin: -140vw;
+  }
+
+  /* Products */
   .products-list {
     justify-content: center;
 
