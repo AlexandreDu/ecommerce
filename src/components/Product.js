@@ -27,7 +27,11 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
             <div className="product-img-wrapper">
                 <img className="product-img" src={imageSrc} alt="produit"/>
             </div>
-            <div className="product-description">{description.length > 180 ? description.substring(0, 180) + "..." : description}</div>
+            <div className="product-description-wrapper">
+                <p className="product-description">
+                    {description.length > 180 ? description.substring(0, 180) + "..." : description}
+                </p>
+            </div>
             <p>{rating.rate} /5</p>
             <p className="product-price">{price.toFixed(2)} €</p>
             <div>

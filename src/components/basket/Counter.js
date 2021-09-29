@@ -4,8 +4,7 @@ import { addProductToBasket, diminishProductToBasket } from '../../actions/baske
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle,faMinusCircle } from '@fortawesome/free-solid-svg-icons'
 const Counter = ({panier, product, addProductToBasket, diminishProductToBasket}) => {
-    console.log("dans counter : props.product.quantity", product.quantity)
-    console.log("dans counter: props.product :", product)
+
 
     const formatCount = () => {
       console.log("product vaut : ", product)
@@ -13,8 +12,8 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
     }
 
     const getPriceWithLimitedDecimals = (product) => {
-      let productTotalPrice = product.price * product.quantity.toFixed(2)    
-      return productTotalPrice
+      return  product.price * product.quantity.toFixed(2)    
+      
     }
 
     return (
@@ -24,7 +23,7 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
               <img className="product-basket-image" src={product.image} alt={product.title}/>
           </div>
           <div className="product-basket-infos-warpper">
-            <div className="product-basket-tile">
+            <div className="product-basket-title">
               <span className="">
                 {product.title}
               </span>
@@ -52,7 +51,7 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
             
           </div>
           <div className="product-price-wrapper">
-              <p>prix: {getPriceWithLimitedDecimals(product)}€</p>
+              <p>prix : {getPriceWithLimitedDecimals(product)}€</p>
           </div>
         </div>
       </>
