@@ -34,10 +34,11 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
               >
                  <FontAwesomeIcon icon={faPlusCircle} />
               </span>
+              
               <span
                 className="product-basket-button"
                 onClick={() => diminishProductToBasket(product, panier.basket)}
-                disabled={product.quantity === 0 ? "disabled" : ""}
+                
               >
                   <FontAwesomeIcon icon={faMinusCircle} />
           
