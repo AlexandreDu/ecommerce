@@ -7,7 +7,6 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
 
 
     const formatCount = () => {
-      console.log("product vaut : ", product)
       return product.quantity
     }
 

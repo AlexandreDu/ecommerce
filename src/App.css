@@ -144,6 +144,7 @@ main {
   max-width: 150px;
   max-height: 150px;
   margin: 0 auto;
+  
 }
 .product-description-wrapper {
   height: 110px;
@@ -153,6 +154,9 @@ main {
 }
 .product-price {
   font-weight: bold;
+}
+.product-cta-wrapper {
+  position: relative;
 }
 .product-cta {
   display: block;
@@ -166,7 +170,17 @@ main {
   font-weight: bold;
 }
 
-
+.product-quantity-circle {
+  background-color: #ffffff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: 68%;
+  top: 0;
+  text-align: center;
+  font-weight: bold;
+}
 /* css for the "plus circle" effect when adding a product in the cart */
 .product-add {
   display: none;
@@ -176,22 +190,31 @@ main {
   display:block;
   opacity: 0;
   color: #ff1744;
+  position: absolute;
+
+  
 }
 .product-cta-on-exit-active {
   display:block;
-  margin-left: 49%;
-  margin-top: 5px;
+  position: absolute;
+  left: 68.5%;
+  top: 0;
   opacity: 1;
   transition: opacity 300ms ease-in;
+
+ 
 }
 
 .product-cta-on-exit-done {
   display:block;
-  margin-left: 49%;
-  margin-top: 5px;
+  position: absolute;
+  left: 68.5%;
+  top: 0;
   opacity: 0;
   transition: opacity 300ms ease-in;
-  color: #ff1744;
+  color: red;
+
+  
 }
 
 /* basket */
@@ -378,12 +401,15 @@ main {
   /* Products */
   .products-list {
     justify-content: center;
+    width: 95%;
 
   }
   .product {
     width: 48%;
   }
-
+  .product:nth-child(2n) {
+    margin-right: 0;
+  }
 
   /* basket */
   .product-basket-image-wrapper {
@@ -443,6 +469,7 @@ main {
     height: auto;
     display: flex;
     flex-direction: column;
+    margin-right: 0;
  
     
   }

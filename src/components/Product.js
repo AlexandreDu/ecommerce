@@ -8,17 +8,31 @@ import { CSSTransition } from 'react-transition-group';
 
 
 const Product = ({title, imageSrc, description, rating, price, panier, product, addProductToBasket}) => {
-
+    // effect for the plus circle when adding a product
     const [effectIsVisible, setEffectIsVisible] = useState(false)
+
+
     const productAddedEffectRef = useRef(null)
     // console.log("props.panier ", props.panier)
     const handleClickAdd = (product, basket) => {
 
 
         setEffectIsVisible(true)
+
         addProductToBasket(product, basket.basket)
     }   
     
+    const getQuantityOfProduct = () => {
+
+        let index = panier.basket.findIndex(prod => {
+            return prod.id === product.id
+        })
+        if(index !== -1) {
+           
+            return panier.basket[index].quantity
+        } 
+ 
+    }
     return (
         <div className="product">
             <div className="product-title">
@@ -34,11 +48,16 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
             </div>
             <p>{rating.rate} /5</p>
             <p className="product-price">{price.toFixed(2)} €</p>
-            <div>
+            <div className="product-cta-wrapper">
                 <span className="product-cta" onClick={() => {handleClickAdd(product, panier)}}>Ajouter au panier</span>
+                {getQuantityOfProduct() > 0 && <div className="product-quantity-circle">
+                    {getQuantityOfProduct()}
+                </div>}
+                
+                
                 <CSSTransition
                     in={effectIsVisible}
-                    timeout={700}
+                    timeout={300}
                     classNames="product-cta-on"
                     // unmountOnExit={true}
                     onEnter={() => setEffectIsVisible(false)}
