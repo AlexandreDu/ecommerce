@@ -4,12 +4,7 @@ import { loadProducts } from '../actions/products/productsAction';
 const Home = (props) => {
 
   
-    const refTest = useRef(null)
 
-    const handleClick = () => {
-        const laRef = refTest.current
-        laRef.classList.add('test')
-    }
     return (
         <div>
 
@@ -25,7 +20,7 @@ const Home = (props) => {
 
 const mapStateToProps = (store) => {
     return {
-        produits: store.productsAll,
+        produits: store.productsAll
 
     }
   }

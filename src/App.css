@@ -22,15 +22,6 @@ main {
   
 }
 
-/* header */
-.header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ff1744;
-  position: fixed;
-}
 
 /* To keep the footer at the bottom of the page */
 #root {
@@ -53,24 +44,58 @@ main {
   justify-content: center;
   align-items: center;
 }
-
-/* navbar */
-nav {
-  width: 50%;
-  
+.footer-title {
+  font-weight: bold;
 }
-nav a {
+/* navbar */
+
+.sidebar_logo {
+  width:5rem;
+}
+#logo {
+  max-width: 80%;
+  height: auto;
+  display:block;
+  /* min-height: 75px; */
+}
+
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content:space-around;
+  position: fixed;
+  width: 100%;
+  max-height: 110px;
+  min-height: 80px;
+  background-color: #ff1744;
+  color: black;
+  z-index: 2;
+
+
+}
+.sidebar_links {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+}
+.sidebar_link {
+  padding: 0.3rem;
   color: #ffffff;
   font-weight: bold;
 }
-.navbar-links {
-  display: flex;
-  justify-content: space-around;
+.sidebar_burger {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  color: inherit;
+  border: none;
+  display:none;
 }
-.panier-icon {
-  color: #ffffff;
-  font-size: 1.2em;
-}
+
+
+
+
 
 /* productsList component */
 .products-list {
@@ -232,18 +257,103 @@ nav a {
 }
 
 @media screen and (max-width: 1024px) {
-  .header {
+
+
+  /* Navbar */
+  .sidebar_logo {
+    width:30%;
+  }
+  #logo {
+      max-width: 35%;
+      margin: 0 auto;
 
   }
-  /* Navbar */
-  .navbar-links {
-    position: fixed;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vh;
-    z-index: 2;
-    background-color: #ff1744;
-    margin: -140vw;
+  .sidebar_links {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      position: fixed;
+      /* Pour masquer le menu, on met right à -120vw */
+      /* right: -120vw; */
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      padding: 2rem;
+      visibility: hidden;
+      background-color:#ff1744;
+      transition: all 0.3s ease-out;
+      opacity: 0;
+      margin-bottom: 0;
+  }
+  /* Pour afficher le menu */
+  .show-sidebar .sidebar_links {
+      width: 100vw;
+      right: 0;
+      visibility: visible;
+      opacity: 1;
+  }
+
+
+
+  .sidebar_link {
+      display: block;
+      padding: 1.5rem;
+      font-size: 5vw;
+  }
+  .sidebar_burger {
+      display:block;
+      /* pour que le menu burger reste cliquable complètement */
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+  }
+  .sidebar_burger:hover {
+      cursor:pointer;
+  }
+
+  .burger_bar,
+  .burger_bar::before,
+  .burger_bar::after {
+      display: block;
+      width: 40px;
+      height: 3px;
+      position: relative;
+      border-radius: 3px;
+      background: #ffffff;
+      transition: all 0.5s ease-in-out;
+  }
+
+  /* ajout d'un content vide pour afficher les autres barres du menu + décalage */
+  .burger_bar::before,
+  .burger_bar::after {
+      content: "";
+      position: absolute;
+      left: 0;
+  }
+
+  .burger_bar::before{
+      transform: translateY(-12px);
+
+  }
+  .burger_bar::after{
+      transform: translateY(12px);
+
+  }
+  /* transformation lorsque l'on clique sur le burger menu */
+  /* la classe show-sidebar est mise lorsque l'on clique sur le menu pour le dérouler ou le fermer  */
+
+  /* Ici on enlève la barre du milieu du menu */
+  .show-sidebar .burger_bar {
+      background: transparent;
+  }
+
+
+  .show-sidebar .burger_bar::before {
+      transform: rotate(45deg)
+  }
+  .show-sidebar .burger_bar::after {
+      transform: rotate(-45deg)
+      
   }
 
   /* Products */
@@ -254,7 +364,4 @@ nav a {
   .product {
     width: 80%;
   }
-
-  
-
 }
