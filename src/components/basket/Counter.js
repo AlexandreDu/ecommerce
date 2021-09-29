@@ -9,8 +9,13 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
 
     const formatCount = () => {
       console.log("product vaut : ", product)
-      return product.quantity === 0 ? "Zero" :  product.quantity;
-    };
+      return product.quantity
+    }
+
+    const getPriceWithLimitedDecimals = (product) => {
+      let productTotalPrice = product.price * product.quantity.toFixed(2)    
+      return productTotalPrice
+    }
 
     return (
       <>
@@ -47,14 +52,12 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
             
           </div>
           <div className="product-price-wrapper">
-              <p>prix: {product.price * product.quantity}€</p>
+              <p>prix: {getPriceWithLimitedDecimals(product)}€</p>
           </div>
         </div>
       </>
     )
   
-
- 
 }
 
 

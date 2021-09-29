@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import {connect} from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -18,20 +18,27 @@ const Navbar = (props) => {
                 <img id="logo" src="assets" alt="logo"/>
             </div>
             <ul className="sidebar_links">
-                <li className="sidebar_item">
-                    <Link to="/"><span onClick={() => handleShowLinks()} className="sidebar_link">Home</span></Link>
+                {/* <li className="sidebar_item">
+                    <NavLink exact activeClassName="current" to="/">Home</NavLink>
                 </li>
                 <li className="sidebar_item">
-                    <Link to="/electronics"><span onClick={() => handleShowLinks()} className="sidebar_link">Electronics</span></Link>
+                    <NavLink activeClassName="current" to="/electronics">Electronics</NavLink>
+                </li> */}
+                <li className="sidebar_item">
+                    <NavLink exact activeClassName="current" to="/"><span onClick={() => handleShowLinks()} className="sidebar_link">Home</span></NavLink>
                 </li>
                 <li className="sidebar_item">
-                    <Link to="/jewelery"><span onClick={() => handleShowLinks()} className="sidebar_link">Jewelery</span></Link>
+                    <NavLink exact activeClassName="current" to="/electronics"><span onClick={() => handleShowLinks()} className="sidebar_link">Electronics</span></NavLink>
+                </li>
+
+                <li className="sidebar_item">
+                    <NavLink exact activeClassName="current" to="/jewelery"><span onClick={() => handleShowLinks()} className="sidebar_link">Jewelery</span></NavLink>
                 </li>
                 <li className="sidebar_item">
-                    <Link to="/men/clothing"><span onClick={() => handleShowLinks()} className="sidebar_link">Men's clothing</span></Link>
+                    <NavLink exact activeClassName="current" to="/men/clothing"><span onClick={() => handleShowLinks()} className="sidebar_link">Men's clothing</span></NavLink>
                 </li>
                 <li className="sidebar_item">
-                    <Link to="/women/clothing"><span onClick={() => handleShowLinks()} className="sidebar_link">Women's clothing</span></Link>
+                    <NavLink exact activeClassName="current" to="/women/clothing"><span onClick={() => handleShowLinks()} className="sidebar_link">Women's clothing</span></NavLink>
                 </li>
 
             </ul>
