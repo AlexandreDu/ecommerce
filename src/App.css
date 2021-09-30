@@ -85,8 +85,7 @@ main {
   padding: 0.3rem;
   color: #ffffff;
   font-weight: bold;
-  font-size: 1rem;
-  transition: all 0.3s ease-in;
+  transition: all 0.5s ease-out;
 }
 .sidebar_burger {
   width: 40px;
@@ -98,8 +97,8 @@ main {
 }
 
 .current {
-  font-size:1.3em;
-  text-shadow: rgb(34, 29, 11) 1px 0 10px;
+  font-size:1.3rem;
+
 }
 
 .panier-icon {
