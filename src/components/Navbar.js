@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
-
 import {connect} from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'

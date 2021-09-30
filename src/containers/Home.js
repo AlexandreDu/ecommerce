@@ -1,29 +1,19 @@
 import React, { useEffect, useRef } from 'react'
 import {connect} from 'react-redux';
 import { loadProducts } from '../actions/products/productsAction';
-import Button from '../components/Button'
+import ThemeHome from '../components/ThemeHome';
 
-const Home = (props) => {
+const Home = () => {
 
   
 
     return (
-        <div className="gallery">
-            <div className="carre1">
-                <p>Women's clothes</p>
-                <Button classe="button-down" />
-            </div>
-            <div className="carre2">
-                <p>Men's clothes</p>
-                <Button classe="button-down" />
-            </div>
-            <div className="carre3">
-                <p>Jewelery</p>
-                <Button classe="button-down" />
-            </div>
-            <div className="carre4">
-                <p>Electronics</p>
-                <Button classe="button-down" />
+        <div className="home">
+            <div className="gallery">
+                <ThemeHome themeTxt="Women's clothes" lien="/women/clothing" themeNumber="carre1" classeButton="button-down" />
+                <ThemeHome themeTxt="Men's clothes" lien="/men/clothing" themeNumber="carre2" classeButton="button-down" />
+                <ThemeHome themeTxt="Jewelery" lien="/jewelery" themeNumber="carre3" classeButton="button-down" />
+                <ThemeHome themeTxt="Electronics" lien="/women/clothing" themeNumber="carre4" classeButton="button-down" />
             </div>
         </div>
     )
