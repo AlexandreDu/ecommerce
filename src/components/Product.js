@@ -46,7 +46,7 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
                 
             )
         })
-        // <FontAwesomeIcon icon={faStar} />
+      
 
     }
 
