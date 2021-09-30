@@ -50,7 +50,7 @@ const Counter = ({panier, product, addProductToBasket, diminishProductToBasket})
             
           </div>
           <div className="product-price-wrapper">
-              <p>prix : {getPriceWithLimitedDecimals(product)}€</p>
+              <p>{getPriceWithLimitedDecimals(product)}€</p>
           </div>
         </div>
       </>

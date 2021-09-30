@@ -18,12 +18,6 @@ const Navbar = (props) => {
                 <img id="logo" src="assets" alt="logo"/>
             </div>
             <ul className="sidebar_links">
-                {/* <li className="sidebar_item">
-                    <NavLink exact activeClassName="current" to="/">Home</NavLink>
-                </li>
-                <li className="sidebar_item">
-                    <NavLink activeClassName="current" to="/electronics">Electronics</NavLink>
-                </li> */}
                 <li className="sidebar_item">
                     <NavLink exact activeClassName="current" to="/"><span onClick={() => handleShowLinks()} className="sidebar_link">Home</span></NavLink>
                 </li>
@@ -50,26 +44,6 @@ const Navbar = (props) => {
             </button>
         </nav>
 
-        // <header className="header">
-        //     <div className="logo-wrapper">
-        //     <Link to={"/"}><h1><img className="logo-img" alt="logo"/></h1></Link>
-        //     </div>
-        //     <nav className={` navbar ${showLinks ? "show-navbar" : "hide-navbar" } `}>
-        //         <ul className="navbar-links">
-        //             <Link to={"/electronics"}><li className="navbar-item"><span className="navbar-link">Electronics</span></li></Link>
-        //             <Link to={"/jewelery"}><li className="navbar-item"><span className="navbar-link">Jewelery</span></li></Link>
-        //             <Link to={"/men/clothing"}><li className="navbar-item"><span className="navbar-link">Men's clothing</span></li></Link>
-        //             <Link to={"/women/clothing"}><li className="navbar-item"><span className="navbar-link">Women's clothing</span></li></Link>
-        //         </ul>
-        //     </nav>
-        //     <div className="">
-
-        //         <Link to={"/panier"}><div className="panier-icon"><FontAwesomeIcon icon={faShoppingCart} /> {props.panier.totalQuantity === undefined ? 0 : props.panier.totalQuantity}</div></Link>
-        //     </div>
-        //     <div className="navbar-burger" onClick={() =>handleShowLinks()}>
-        //         <span className="burger-bar"></span>
-        //     </div>
-        // </header>
     )
 }
 
