@@ -184,6 +184,9 @@ main {
 /* css for the "plus circle" effect when adding a product in the cart */
 .product-add {
   display: none;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background-color: #ffffff;
   
 }
 .product-cta-on-exit {
