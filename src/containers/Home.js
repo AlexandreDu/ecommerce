@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from 'react'
 import {connect} from 'react-redux';
 import { loadProducts } from '../actions/products/productsAction';
 import Carousel from '../components/Carousel';
+import SquareBoxProduct from '../components/SquareBoxProduct';
 
 import Theme from '../components/Theme';
 
-const Home = () => {
+const Home = ({produits}) => {
 
 
     const [backgroundColor, setBackgroundColor] = useState('bg-color-yellow')
@@ -39,7 +40,8 @@ const Home = () => {
             </div>
 
             <section className="best-seller">
-       
+                {console.log(produits)}
+                <SquareBoxProduct />
             </section>
 
             <section className="theme">

@@ -17,9 +17,7 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
     // console.log("props.panier ", props.panier)
     const handleClickAdd = (product, basket) => {
 
-
         setEffectIsVisible(true)
-
         addProductToBasket(product, basket.basket)
     }   
     
@@ -37,17 +35,14 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
 
     const getNumberOfStars = (rate) => {
         
-        return [...Array(rate)].map(star => {
+        return [...Array(rate)].map((star, index) => {
             
             return (
-                <span className="product-rate-icon">
+                <span key={index} className="product-rate-icon">
                 <FontAwesomeIcon icon={faStar} />
-                </span>
-                
+                </span>              
             )
-        })
-      
-
+        })   
     }
 
     return (
@@ -72,8 +67,7 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
                 {getQuantityOfProduct() > 0 && <div className="product-quantity-circle">
                     {getQuantityOfProduct()}
                 </div>}
-                
-                
+
                 <CSSTransition
                     in={effectIsVisible}
                     timeout={300}
@@ -83,12 +77,8 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
 
                 >
                     <span className="product-add" ref={productAddedEffectRef} ><FontAwesomeIcon icon={faPlusCircle} /></span>
-                </CSSTransition>
-                
+                </CSSTransition> 
             </div>
-            
-            
-            
         </div>
     )
 }

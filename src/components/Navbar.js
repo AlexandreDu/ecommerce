@@ -17,7 +17,7 @@ const Navbar = (props) => {
         <nav className={`sidebar ${showLinks ? "show-sidebar" : "hide-sidebar"} `}>
             <div className="sidebar_logo">
                 <h1>
-                    <Link exact activeClassName="current" to="/">
+                    <Link to="/">
                         <img id="logo" src={logo} alt="Welcome to the shop"/>
                     </Link>
                 </h1>
