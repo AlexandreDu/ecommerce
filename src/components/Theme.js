@@ -2,7 +2,7 @@ import React from 'react'
 import Button from './Button'
 import { Link } from 'react-router-dom';
 
-const ThemeHome = ({themeTxt, lien, themeNumber, classeButton}) => {
+const Theme = ({themeTxt, lien, themeNumber, classeButton}) => {
 
 
     return (
@@ -18,4 +18,4 @@ const ThemeHome = ({themeTxt, lien, themeNumber, classeButton}) => {
 }
 
 
-export default ThemeHome
+export default Theme

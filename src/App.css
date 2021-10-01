@@ -116,52 +116,57 @@ main {
 
 
 /* Carousel of the home page */
-
+.hide {
+  display: none;
+}
 .carousel {
   width: 700px;
+
   margin: 0 auto;
-}
-.carousel-main-picture-wrapper {
-  width: 700px;
   position: relative;
+  user-select: none;
 }
-.carousel-secondary-pictures-wrapper {
-  display: flex;
-  justify-content: space-between;
+.slide {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
 }
-.carousel-2-picture-wrapper, .carousel-3-picture-wrapper, .carousel-4-picture-wrapper {
-  width: calc(650px / 3);
+.slide.active-picture {
+  opacity: 1;
 }
-.carousel-main-picture, .carousel-2-picture, .carousel-3-picture, .carousel-4-picture {
+.carousel-main-picture {
   display: block;
+  width: 700px;
+  height: 430px;
   max-width: 100%;
+  max-height: 100%;
 }
+
+
 /* buttons for switching pictures */
 .previous-button, .next-button {
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 26px;
   position: absolute;
-  top: +50%;
+  top: 50%;
   background-color: #ffffff;
+  color:#ff1744;
   border-radius: 50%;
-  font-size: 23px;
+  font-size: 26px;
+  z-index: 10;
+  cursor: pointer;
 }
 .previous-button {
-  
-
+  left: -13px;
 }
 .next-button {
-
-
-  left: 98%;
- 
+  right: -13px;
 }
 
 .home {
     width: 60%;
     margin: 0 auto;
 }
-.gallery {
+.theme-gallery {
   width: 50%;
   font-size: 3em;
   color: white;
