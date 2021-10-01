@@ -76,7 +76,7 @@ main {
   min-height: 80px;
   background-color: #ff1744;
   color: black;
-  z-index: 2;
+  z-index: 5;
 
 
 }
@@ -177,7 +177,7 @@ main {
   color:#ff1744;
   border-radius: 50%;
   font-size: 26px;
-  z-index: 10;
+  z-index: 2;
   cursor: pointer;
 }
 .previous-button {
@@ -613,6 +613,9 @@ border : 3px solid white;
 
 @media screen and (max-width: 768px) {
 
+  main {
+    padding-top: 80px;
+  }
   /* basket */
   .product-basket-title {
     min-width: 280px;
@@ -636,9 +639,34 @@ border : 3px solid white;
 
 @media screen and (max-width: 480px) {
   /* navbar */
+  .sidebar_logo {
+    width: 170px;
+  }
   .panier-icon {
     margin-right: 50px;
   }
+  /* home */
+  /* Carousel from home */
+  .carousel {
+    width: 350px;
+  }
+  .carousel-main-picture {
+    height: 200px;
+  }
+  .previous-button {
+    left: -2px;
+    top: 140px;
+  }
+  .next-button {
+    right: -2px;
+    top: 315px;
+  }
+  /* theme from home */
+  .theme-gallery {
+    width: 300px;
+    display: block;
+  }
+
   /* product */
   .product {
     width: 95%;
@@ -646,8 +674,6 @@ border : 3px solid white;
     display: flex;
     flex-direction: column;
     margin-right: 0;
- 
-    
   }
   .product-title {
     height: auto;
@@ -694,4 +720,27 @@ border : 3px solid white;
     min-width: inherit;
     width: 100%;
   }
+}
+
+@media screen and (max-width: 320px) {
+
+
+  /* home */
+  /* Carousel from home */
+  .carousel {
+    width: 300px;
+  }
+  .previous-button {
+    left: 10px;
+    top: 155px;
+  }
+  .next-button {
+    right: 10px;
+    top: 335px;
+  }
+  .theme {
+    padding: 0;
+  }
+
+
 }

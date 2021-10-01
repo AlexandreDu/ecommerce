@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import Counter from "./Counter";
+import React from "react";
+import Counter from "../components/basket/Counter";
+
 import {connect} from 'react-redux';
 
 
 
 const Panier = ({panier}) => {
 
-  console.log("voici la panier dans counters :", panier.basket)
     
     return (
       <>

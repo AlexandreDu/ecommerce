@@ -5,7 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import FetchData from './components/FetchData';
 import Home from './containers/Home';
-import Panier from './components/basket/Panier'
+import Panier from './containers/Panier'
 import Electronics from './containers/Electronics';
 import Jewelery from './containers/Jewelery';
 import MenClothing from './containers/MenClothing';
