@@ -7,7 +7,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import dataImageSlider from '../api/dataImageSlider'
 
-const Carousel = ({changeBackgroundColor}) => {
+const Carousel = ({changeBackgroundColor, homeBackgroundColor}) => {
 
     
     
@@ -40,7 +40,7 @@ const Carousel = ({changeBackgroundColor}) => {
     const getAllPicturesForCarousel = () => {
         return dataImageSlider.map((data, index) => {
             return (
-                <div className={currentIndexPicture === index ? "slide active-picture" : "slide"}>
+                <div key={index} className={currentIndexPicture === index ? "slide active-picture" : "slide"}>
                     {currentIndexPicture === index && <>
                         <img className="carousel-main-picture" src={process.env.PUBLIC_URL + `/images/carousel/${data}`} alt={data}/>
                     </>}   
@@ -54,8 +54,9 @@ const Carousel = ({changeBackgroundColor}) => {
 
     return (
         <section className="carousel">
-            <h2>Follow brands to see more from them first</h2>
-            <span onClick={() => getPrevPicture()} className="previous-button"><FontAwesomeIcon icon={faArrowLeft} /></span>
+            {console.log(homeBackgroundColor)}
+            <h2><span className="size-font-high">Follow brands</span> to see more from them first</h2>
+            <span onClick={() => getPrevPicture()} className={`previous-button ${homeBackgroundColor}`}><FontAwesomeIcon icon={faArrowLeft} /></span>
             {getAllPicturesForCarousel()}
             <span onClick={() => getNextPicture()} className="next-button"><FontAwesomeIcon icon={faArrowRight} /></span>
         </section>

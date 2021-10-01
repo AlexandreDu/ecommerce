@@ -150,7 +150,7 @@ main {
   width: 700px;
   margin: 20px auto;
   position: relative;
-  padding: 40px;
+  padding: 20px 40px 40px 40px;
   user-select: none;
 }
 .slide {
@@ -168,14 +168,12 @@ main {
   max-height: 100%;
 }
 
-
 /* buttons for switching pictures */
 .previous-button, .next-button {
   width: 26px;
   height: 26px;
   position: absolute;
   top: 50%;
-  background-color: #ffffff;
   color:#ff1744;
   border-radius: 50%;
   font-size: 26px;
@@ -188,6 +186,17 @@ main {
 .next-button {
   right: -13px;
 }
+
+/* best seller section of Home */
+.best-seller {
+  background-color: #FF1744;
+}
+
+/* theme inspiration of Home */
+.theme {
+  padding: 20px;
+}
+
 .theme-gallery {
   width: 700px;
   font-size: 3em;
@@ -272,6 +281,7 @@ border : 3px solid white;
 .products-list {
   width: 60%;
   margin: 0 auto;
+  padding-top: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
