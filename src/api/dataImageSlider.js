@@ -1,5 +1,5 @@
 
 const dataImageSlider = [
-    "picture-1.jpg", "picture-2.jpg", "picture-3.jpg", "picture-4.jpg"]
+    "picture-1.webp", "picture-2.webp", "picture-3.webp", "picture-4.webp"]
 
 export default dataImageSlider

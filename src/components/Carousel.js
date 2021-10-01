@@ -1,22 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-// import womenPicture from '../assets/images/carousel/picture-1.jpg'
-// import menPicture from '../assets/images/carousel/picture-2.jpg'
-// import jewelPicture from '../assets/images/carousel/picture-3.jpg'
-// import electronicsPicture from '../assets/images/carousel/picture-4.jpg'
+
 
 
 import dataImageSlider from '../api/dataImageSlider'
 
-const Carousel = () => {
+const Carousel = ({changeBackgroundColor}) => {
+
+    
     
     const [currentIndexPicture, setCurrentIndexPicture] = useState(0)
 
+
+    useEffect(()=> {
+        // we lift the state up to Home in order to change the background-color (of home)
+        changeBackgroundColor(currentIndexPicture)
+    }, [currentIndexPicture])
+
+
     const getNextPicture = () => {
         if(currentIndexPicture < dataImageSlider.length - 1) {
-            setCurrentIndexPicture(prev => prev + 1)
+            setCurrentIndexPicture(prev => prev + 1)  
         } else {
             setCurrentIndexPicture(0)
         } 
@@ -30,10 +36,8 @@ const Carousel = () => {
             setCurrentIndexPicture( dataImageSlider.length - 1)
         } 
     }
-    
+
     const getAllPicturesForCarousel = () => {
-
-
         return dataImageSlider.map((data, index) => {
             return (
                 <div className={currentIndexPicture === index ? "slide active-picture" : "slide"}>
@@ -49,14 +53,12 @@ const Carousel = () => {
         
 
     return (
-        <>
-        {console.log("render")}
-
-                <span onClick={() => getPrevPicture()} className="previous-button"><FontAwesomeIcon icon={faArrowLeft} /></span>
-                {getAllPicturesForCarousel()}
-                <span onClick={() => getNextPicture()} className="next-button"><FontAwesomeIcon icon={faArrowRight} /></span>
-
-        </>
+        <section className="carousel">
+            <h2>Follow brands to see more from them first</h2>
+            <span onClick={() => getPrevPicture()} className="previous-button"><FontAwesomeIcon icon={faArrowLeft} /></span>
+            {getAllPicturesForCarousel()}
+            <span onClick={() => getNextPicture()} className="next-button"><FontAwesomeIcon icon={faArrowRight} /></span>
+        </section>
         
     )
 }

@@ -22,7 +22,7 @@ h2 {
   text-align: center;
 }
 main {
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 /* General class */
@@ -30,6 +30,7 @@ main {
   font-size: 2.5rem;
   color: #ff1744;
 }
+
 /* To keep the footer at the bottom of the page */
 #root {
   position: relative;
@@ -57,13 +58,11 @@ main {
 /* navbar */
 
 .sidebar_logo {
-  width:5rem;
+  width: 100px;
 }
 #logo {
-  max-width: 80%;
-  height: auto;
+  width: 100%;
   display:block;
-  /* min-height: 75px; */
 }
 
 .sidebar {
@@ -116,14 +115,41 @@ main {
 
 
 /* Carousel of the home page */
+.home {
+  
+  margin: 0 auto;
+}
 .hide {
   display: none;
 }
+.carousel-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in;
+}
+.bg-color-yellow {
+  background-color: #E6B900
+}
+.bg-color-dark {
+  background-color: #1F2631;
+}
+.bg-color-white {
+  background-color: #EDF1F4;
+}
+.bg-color-yellow-2 {
+  background-color: #FDC100;
+}
+
+.carousel-wrapper h2 {
+  color: #ff1744;
+  text-align: left;
+  margin-top: 0;
+}
 .carousel {
   width: 700px;
-
-  margin: 0 auto;
+  margin: 20px auto;
   position: relative;
+  padding: 40px;
   user-select: none;
 }
 .slide {
@@ -161,13 +187,8 @@ main {
 .next-button {
   right: -13px;
 }
-
-.home {
-    width: 60%;
-    margin: 0 auto;
-}
 .theme-gallery {
-  width: 50%;
+  width: 700px;
   font-size: 3em;
   color: white;
   display: grid;
@@ -177,6 +198,7 @@ main {
   margin: 0 auto;
   padding: 10px;
   background-color: #ffffff;
+  margin-bottom: 40px;
 }
 .carre1, .carre2, .carre3, .carre4 {
   cursor: pointer;

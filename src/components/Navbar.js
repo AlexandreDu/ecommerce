@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import {connect} from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import logo from '../assets/logo/logo.png'
+
 const Navbar = (props) => {
 
     const [showLinks, setShowLinks] = useState(false)
@@ -14,7 +16,11 @@ const Navbar = (props) => {
     return (
         <nav className={`sidebar ${showLinks ? "show-sidebar" : "hide-sidebar"} `}>
             <div className="sidebar_logo">
-                <img id="logo" src="assets" alt="logo"/>
+                <h1>
+                    <Link exact activeClassName="current" to="/">
+                        <img id="logo" src={logo} alt="Welcome to the shop"/>
+                    </Link>
+                </h1>
             </div>
             <ul className="sidebar_links">
                 <li className="sidebar_item">
@@ -23,7 +29,6 @@ const Navbar = (props) => {
                 <li className="sidebar_item">
                     <NavLink exact activeClassName="current" to="/electronics"><span onClick={() => handleShowLinks()} className="sidebar_link">Electronics</span></NavLink>
                 </li>
-
                 <li className="sidebar_item">
                     <NavLink exact activeClassName="current" to="/jewelery"><span onClick={() => handleShowLinks()} className="sidebar_link">Jewelery</span></NavLink>
                 </li>
@@ -33,7 +38,6 @@ const Navbar = (props) => {
                 <li className="sidebar_item">
                     <NavLink exact activeClassName="current" to="/women/clothing"><span onClick={() => handleShowLinks()} className="sidebar_link">Women's clothing</span></NavLink>
                 </li>
-
             </ul>
             <div className="">
                 <Link to={"/panier"}><div className="panier-icon"><FontAwesomeIcon icon={faShoppingCart} /> {props.panier.totalQuantity === undefined ? 0 : props.panier.totalQuantity}</div></Link>
