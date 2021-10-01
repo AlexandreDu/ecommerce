@@ -56,6 +56,7 @@ const Carousel = ({changeBackgroundColor, homeBackgroundColor}) => {
         <section className="carousel">
             {console.log(homeBackgroundColor)}
             <h2><span className="size-font-high">Follow brands</span> to see more from them first</h2>
+            {/* the bg-color changes according to the background of home (via props) */}
             <span onClick={() => getPrevPicture()} className={`previous-button ${homeBackgroundColor}`}><FontAwesomeIcon icon={faArrowLeft} /></span>
             {getAllPicturesForCarousel()}
             <span onClick={() => getNextPicture()} className="next-button"><FontAwesomeIcon icon={faArrowRight} /></span>
