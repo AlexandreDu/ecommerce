@@ -1,16 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import Product from '../components/Product'
-
 import {connect} from 'react-redux';
 import { loadProducts } from '../actions/products/productsAction';
+import ClipLoader from "react-spinners/ClipLoader";
 
 const ProductsList = (props) => {
 
-  
 
-    
-  
- 
     const getAllProductsFromCat = () => {
 
         // console.log("props.produits", props.produits.productsAll.data)
@@ -28,9 +24,13 @@ const ProductsList = (props) => {
 
     return (
         <div className="products-list">
-            {props.produits.productsAll.data !== undefined && <>
-            {getAllProductsFromCat()}
-            </>}
+            {props.produits.productsAll.data !== undefined   
+            ? <>
+                {getAllProductsFromCat()}
+            </>
+            : <div className="spinner-wrapper">
+            <ClipLoader color={"pink"} loading={props.produits.productsAll.data} size={50} />
+            </div>}
         </div>
     )
 }
