@@ -244,6 +244,8 @@ border : 3px solid white;
 }
 .theme-title {
   color: #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 /* cta  (home page) */
 .button-down {
@@ -654,17 +656,18 @@ border : 3px solid white;
   /* Carousel from home */
   .carousel {
     width: 350px;
+    margin-top: 0;
   }
   .carousel-main-picture {
     height: 200px;
   }
   .previous-button {
     left: -2px;
-    top: 140px;
+    top: 110px;
   }
   .next-button {
     right: -2px;
-    top: 315px;
+    top: 295px;
   }
   /* theme from home */
   .theme-gallery {
@@ -738,14 +741,7 @@ border : 3px solid white;
   .carousel {
     width: 300px;
   }
-  .previous-button {
-    left: 10px;
-    top: 155px;
-  }
-  .next-button {
-    right: 10px;
-    top: 335px;
-  }
+  
   .theme {
     padding: 0;
   }
