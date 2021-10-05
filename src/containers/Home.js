@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import {connect} from 'react-redux';
 import { loadProducts } from '../actions/products/productsAction';
 import Carousel from '../components/Carousel';
-import SquareBoxProduct from '../components/SquareBoxProduct';
-
 import Theme from '../components/Theme';
 
 const Home = ({produits}) => {
+
 
 
     const [backgroundColor, setBackgroundColor] = useState('bg-color-yellow')
@@ -39,18 +38,13 @@ const Home = ({produits}) => {
                 <Carousel changeBackgroundColor={changeBackgroundColor} homeBackgroundColor={backgroundColor} />
             </div>
 
-            <section className="best-seller">
-                {console.log(produits)}
-                <SquareBoxProduct />
-            </section>
-
             <section className="theme">
-                <h2>Do you need some <span className="size-font-high">inspiration</span> ?</h2>
+                <h2>Vous avez besoin d'<span className="size-font-high">inspiration</span> ?</h2>
                 <div className="theme-gallery">
-                    <Theme themeTxt="Women's clothes" lien="/women/clothing" themeNumber="carre1" classeButton="button-down" />
-                    <Theme themeTxt="Men's clothes" lien="/men/clothing" themeNumber="carre2" classeButton="button-down" />
-                    <Theme themeTxt="Jewelery" lien="/jewelery" themeNumber="carre3" classeButton="button-down" />
-                    <Theme themeTxt="Electronics" lien="/women/clothing" themeNumber="carre4" classeButton="button-down" />
+                    <Theme themeTxt="Vêtements femme" lien="/women/clothing" themeNumber="carre1" classeButton="button-down" />
+                    <Theme themeTxt="Vêtements homme" lien="/men/clothing" themeNumber="carre2" classeButton="button-down" />
+                    <Theme themeTxt="Bijoux" lien="/jewelery" themeNumber="carre3" classeButton="button-down" />
+                    <Theme themeTxt="Electronique" lien="/women/clothing" themeNumber="carre4" classeButton="button-down" />
                 </div>
             </section>
         </div>

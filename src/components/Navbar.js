@@ -27,16 +27,16 @@ const Navbar = (props) => {
                     <NavLink exact activeClassName="current" to="/"><span onClick={() => handleShowLinks()} className="sidebar_link">Home</span></NavLink>
                 </li>
                 <li className="sidebar_item">
-                    <NavLink exact activeClassName="current" to="/electronics"><span onClick={() => handleShowLinks()} className="sidebar_link">Electronics</span></NavLink>
+                    <NavLink exact activeClassName="current" to="/electronics"><span onClick={() => handleShowLinks()} className="sidebar_link">Electronique</span></NavLink>
                 </li>
                 <li className="sidebar_item">
-                    <NavLink exact activeClassName="current" to="/jewelery"><span onClick={() => handleShowLinks()} className="sidebar_link">Jewelery</span></NavLink>
+                    <NavLink exact activeClassName="current" to="/jewelery"><span onClick={() => handleShowLinks()} className="sidebar_link">Bijoux</span></NavLink>
                 </li>
                 <li className="sidebar_item">
-                    <NavLink exact activeClassName="current" to="/men/clothing"><span onClick={() => handleShowLinks()} className="sidebar_link">Men's clothing</span></NavLink>
+                    <NavLink exact activeClassName="current" to="/men/clothing"><span onClick={() => handleShowLinks()} className="sidebar_link">Vêtements homme</span></NavLink>
                 </li>
                 <li className="sidebar_item">
-                    <NavLink exact activeClassName="current" to="/women/clothing"><span onClick={() => handleShowLinks()} className="sidebar_link">Women's clothing</span></NavLink>
+                    <NavLink exact activeClassName="current" to="/women/clothing"><span onClick={() => handleShowLinks()} className="sidebar_link">Vêtements femme</span></NavLink>
                 </li>
             </ul>
             <div className="">
