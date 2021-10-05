@@ -39,7 +39,7 @@ const Home = ({produits}) => {
             </div>
 
             <section className="theme">
-                <h2>Vous avez besoin d'<span className="size-font-high">inspiration</span> ?</h2>
+                <h2>Vous avez besoin d' <span className="size-font-high">inspiration</span> ?</h2>
                 <div className="theme-gallery">
                     <Theme themeTxt="Vêtements femme" lien="/women/clothing" themeNumber="carre1" classeButton="button-down" />
                     <Theme themeTxt="Vêtements homme" lien="/men/clothing" themeNumber="carre2" classeButton="button-down" />
