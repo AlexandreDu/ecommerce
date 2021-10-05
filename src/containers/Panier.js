@@ -28,9 +28,14 @@ const Panier = ({panier}) => {
         }
         </div>
         {panier.totalPrice > 0 && 
+        <>
         <div className="total-price-basket-wrapper">
           <span className="total-price-basket">Prix total : {panier.totalPrice.toFixed(2)}€</span>
-        </div>}
+        </div>
+        <div className="product-cta-wrapper">
+          <span className="product-cta">Passer la commande</span>
+        </div>
+        </>}
         
       </>
     )
