@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from './Button'
 import { Link } from 'react-router-dom';
 
 const Theme = ({themeTxt, lien, themeNumber, classeButton}) => {
@@ -10,7 +9,7 @@ const Theme = ({themeTxt, lien, themeNumber, classeButton}) => {
             <div className={themeNumber}>
                 <Link to={lien}>
                     <p className="theme-title">{themeTxt}</p>
-                    <Button classe={classeButton} lien={lien} />
+                    <div className={classeButton}></div>
                 </Link>
             </div>
         

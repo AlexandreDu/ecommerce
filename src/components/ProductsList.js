@@ -29,7 +29,7 @@ const ProductsList = (props) => {
                 {getAllProductsFromCat()}
             </>
             : <div className="spinner-wrapper">
-            <ClipLoader color={"pink"} loading={props.produits.productsAll.data} size={50} />
+            <ClipLoader color={"#ff1744"} loading={props.produits.productsAll.data} size={50} />
             </div>}
         </div>
     )

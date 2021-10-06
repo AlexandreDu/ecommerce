@@ -10,6 +10,7 @@ import Electronics from './containers/Electronics';
 import Jewelery from './containers/Jewelery';
 import MenClothing from './containers/MenClothing';
 import WomenClothing from './containers/WomenClothing';
+import Order from './containers/Order'
 import Footer from './containers/Footer';
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
             <Route exact path="/electronics" component={Electronics}/>
             <Route exact path="/jewelery" component={Jewelery}/>
             <Route exact path="/men/clothing" component={MenClothing}/>
-            <Route exact path="/women/clothing" component={WomenClothing}/>          
+            <Route exact path="/women/clothing" component={WomenClothing}/>    
+            <Route exact path="/order" component={Order}/>      
           </Switch>
         </main>
       </div>

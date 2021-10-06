@@ -4,7 +4,6 @@ import { addProductToBasket } from '../actions/basket/basketAction';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-
 import { CSSTransition } from 'react-transition-group';
 
 
@@ -16,7 +15,6 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
     const productAddedEffectRef = useRef(null)
     // console.log("props.panier ", props.panier)
     const handleClickAdd = (product, basket) => {
-
         setEffectIsVisible(true)
         addProductToBasket(product, basket.basket)
     }   
@@ -32,7 +30,7 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
             return panier.basket[index].quantity
         } 
     }
-
+    
     const getNumberOfStars = (rate) => {
         
         return [...Array(rate)].map((star, index) => {
