@@ -500,7 +500,7 @@ border : 3px solid white;
 }
 .order-input {
   width: 300px;
-  margin: 40px auto;
+  margin: 20px auto;
   display: block;
   border-top: none;
   border-left: none;
@@ -801,6 +801,7 @@ input[type=number] {
     margin: 0px auto;
     top: 60%;
     transform:translateX(-50%);
+    
   }
 }
 
@@ -820,18 +821,16 @@ input[type=number] {
   /* order popUp */
   .order-form {
     width: 250px;
-    height: 350px;
-    left: 0%;
+    height: 300px;
+    left: 10%;
     bottom: 0%;
-    /* transform:translateY(100px);
-    transform:translateX(35px); */
     font-size: 1rem;
     transform:translateX(13%);
     transform:translateY(15%);
   }
   .order-input {
     width: 200px;
-    margin-top: 35px;
+    margin-top: 25px;
     margin-bottom: 15px;
   }
 
