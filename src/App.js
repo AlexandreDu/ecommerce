@@ -3,14 +3,13 @@ import {Switch, Route} from 'react-router-dom';
 
 import './App.css';
 import Navbar from './components/Navbar'
-import FetchData from './components/FetchData';
-import Home from './containers/Home';
-import Panier from './containers/Panier'
-import Electronics from './containers/Electronics';
-import Jewelery from './containers/Jewelery';
-import MenClothing from './containers/MenClothing';
-import WomenClothing from './containers/WomenClothing';
-import Order from './containers/Order'
+import FetchData from './features/products/FetchData';
+import Home from './features/products/Home';
+import Panier from './features/basket/Panier';
+import Electronics from './features/products/Electronics';
+import Jewelery from './features/products/Jewelery';
+import MenClothing from './features/products/MenClothing';
+import WomenClothing from './features/products/WomenClothing';
 import Footer from './containers/Footer';
 
 function App() {
@@ -27,14 +26,10 @@ function App() {
             <Route exact path="/jewelery" component={Jewelery}/>
             <Route exact path="/men/clothing" component={MenClothing}/>
             <Route exact path="/women/clothing" component={WomenClothing}/>    
-            <Route exact path="/order" component={Order}/>      
           </Switch>
         </main>
-      </div>
-      <footer className="footer">
-        <Footer />
-      </footer>
-      
+      </div>  
+      <Footer />
     </>
   )
 }

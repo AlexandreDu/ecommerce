@@ -1,35 +1,31 @@
 import React, {useRef, useState} from 'react'
-import {connect} from 'react-redux';
-import { addProductToBasket } from '../actions/basket/basketAction';
+import { useSelector, useDispatch } from 'react-redux'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { CSSTransition } from 'react-transition-group';
+import { addProduct, selectProductQuantity } from '../basket/basketSlice'
 
 
-const Product = ({title, imageSrc, description, rating, price, panier, product, addProductToBasket}) => {
+const Product = ({title, imageSrc, description, rating, price, product}) => {
+    console.log(product.id)
+    const productBasketQuantity = useSelector(state => {
+        return selectProductQuantity(state, product.id)
+    })
+    console.log(productBasketQuantity)
+    const dispatch = useDispatch()
     // effect for the plus circle when adding a product
     const [effectIsVisible, setEffectIsVisible] = useState(false)
 
 
     const productAddedEffectRef = useRef(null)
     // console.log("props.panier ", props.panier)
-    const handleClickAdd = (product, basket) => {
+    const handleClickAdd = (product) => {
         setEffectIsVisible(true)
-        addProductToBasket(product, basket.basket)
+        dispatch(addProduct(product))
     }   
     
-    const getQuantityOfProduct = () => {
-
-        let index = panier.basket.findIndex(prod => {
-            return prod.id === product.id
-        })
-        // if the product is in the basket, we return the quantity
-        if(index !== -1) {
-           
-            return panier.basket[index].quantity
-        } 
-    }
     
     const getNumberOfStars = (rate) => {
         
@@ -57,13 +53,11 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
                 </p>
             </div>
             <p>{getNumberOfStars(Math.round(rating.rate))}</p>
-            {/* <p>{Math.round(rating.rate)}/5</p> */}
             <p className="product-price">{price.toFixed(2)}€</p>
             <div className="product-cta-wrapper">
-                <span className="product-cta" onClick={() => {handleClickAdd(product, panier)}}>Ajouter au panier</span>
-                {/* display the quantity only if > 0 */}
-                {getQuantityOfProduct() > 0 && <div className="product-quantity-circle">
-                    {getQuantityOfProduct()}
+                <span className="product-cta" onClick={() => {handleClickAdd(product)}}>Ajouter au panier</span>
+                {productBasketQuantity > 0 && <div className="product-quantity-circle">
+                    {productBasketQuantity}
                 </div>}
 
                 <CSSTransition
@@ -81,14 +75,5 @@ const Product = ({title, imageSrc, description, rating, price, panier, product, 
     )
 }
 
-const mapStateToProps = (store) => {
-    return {
-        produits: store.productsAll,
-        panier: store.basket
-    }
-  }
-  const mapDispatchToProps = {
-    addProductToBasket
-  }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Product);
+export default Product;

@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
-import {connect} from 'react-redux';
+import { useSelector } from 'react-redux';
+import {selectQuantityInBasket} from '../features/basket/basketSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import logo from '../assets/logo/logo.png'
 
-const Navbar = (props) => {
-
+const Navbar = () => {
+    const quantityBasket = useSelector(selectQuantityInBasket)
+    
     const [showLinks, setShowLinks] = useState(false)
     
     const handleShowLinks = () => {
@@ -40,7 +42,7 @@ const Navbar = (props) => {
                 </li>
             </ul>
             <div className="">
-                <Link to={"/panier"}><div className="panier-icon"><FontAwesomeIcon icon={faShoppingCart} /> {props.panier.totalQuantity === undefined ? 0 : props.panier.totalQuantity}</div></Link>
+                <Link to={"/panier"}><div className="panier-icon"><FontAwesomeIcon icon={faShoppingCart} /> {quantityBasket === undefined ? 0 : quantityBasket}</div></Link>
             </div>
             <button className="sidebar_burger" onClick={handleShowLinks}>
                 <span className="burger_bar"></span>
@@ -52,14 +54,4 @@ const Navbar = (props) => {
 
 
 
-const mapStateToProps = (store) => {
-    return {
-        produits: store.productsAll,
-        panier: store.basket
-    }
-  }
-  const mapDispatchToProps = {
-  
-  }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default Navbar;

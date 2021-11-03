@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import {connect} from 'react-redux';
-import { loadProducts } from '../actions/products/productsAction';
-import Carousel from '../components/Carousel';
-import Theme from '../components/Theme';
+import Carousel from '../../components/Carousel';
+import Theme from '../products/Theme';
 
-const Home = ({produits}) => {
+const Home = ({}) => {
 
 
 
@@ -28,7 +26,6 @@ const Home = ({produits}) => {
             default:
                 console.log('pb')
         }
-        
     }
   
 
@@ -52,14 +49,5 @@ const Home = ({produits}) => {
 
 }
 
-const mapStateToProps = (store) => {
-    return {
-        produits: store.productsAll
 
-    }
-  }
-  const mapDispatchToProps = {
-      loadProducts
-  }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;
