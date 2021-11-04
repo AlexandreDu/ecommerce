@@ -15,10 +15,17 @@ const ProductsList = ({category}) => {
     })
 
     return (
-        <div className="products-list">
-            <ClipLoader color={"#ff1744"} loading={productsByCat} size={50} />
-            {renderProductsByCat}
-        </div>
+        <>
+            {productsByCat.length > 0
+            
+            ? <div className="products-list">
+                {renderProductsByCat}
+            </div>
+        
+            : <div className="spinner-wrapper">
+                <ClipLoader color={"#ff1744"} loading={productsByCat} size={50} />
+            </div>}
+        </>    
     )
 }
 
