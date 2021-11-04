@@ -199,7 +199,7 @@ main {
 
 .theme-gallery {
   width: 700px;
-  font-size: 3em;
+  font-size: 3rem;
   color: white;
   display: grid;
   grid-template-columns:  1.3fr 1.3fr 2fr;
@@ -516,10 +516,10 @@ border : 3px solid white;
 
   /* Navbar */
   .sidebar_logo {
-    width:30%;
+    width: 100px;
   }
   #logo {
-      max-width: 35%;
+      
       margin: 0 auto;
 
   }
@@ -654,6 +654,20 @@ border : 3px solid white;
     padding-top: 80px;
   }
 
+  /* Home */
+  .carousel {
+    width: 500px;
+  }
+ 
+  .theme-gallery {
+    width: 500px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    font-size: 2rem;
+  }
+  .carre4 {
+    grid-column: inherit;
+  }
   /* Product */
   .product {
     height: 565px;
@@ -694,25 +708,14 @@ border : 3px solid white;
   }
 }
 
-
 @media screen and (max-width: 540px) {
-  /* Product */
-  .product {
-    width: 95%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    margin-right: 0;
-  }
-  .product-description-wrapper {
-    height: auto;
-  }
+  
 }
 /* surface duo and smart phones */
 @media screen and (max-width: 540px) {
   /* navbar */
   .sidebar_logo {
-    width: 170px;
+    width: 80px;
   }
   .panier-icon {
     margin-right: 50px;
@@ -739,6 +742,10 @@ border : 3px solid white;
     width: 300px;
     display: block;
   }
+  .carre1, .carre2, .carre3, .carre4 {
+    height: auto;
+  }
+/* Product */
 
   /* product */
   .spinner-wrapper {
@@ -798,13 +805,21 @@ border : 3px solid white;
   }
 }
 
+@media screen and (max-width: 366px) {
+  .carousel, .theme-gallery {
+    width: 300px;
+  }
+  .theme {
+    padding: 0;
+  }
+}
 @media screen and (max-width: 320px) {
 
 
   /* home */
   /* Carousel from home */
-  .carousel {
-    width: 300px;
+  .carousel, .theme-gallery {
+    width: 260px;
   }
   .theme {
     padding: 0;

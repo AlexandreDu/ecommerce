@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Carousel from '../../components/Carousel';
 import Theme from '../products/Theme';
 
-const Home = ({}) => {
+const Home = () => {
 
 
 
@@ -24,7 +24,7 @@ const Home = ({}) => {
                 setBackgroundColor('bg-color-yellow-2')
                 break;
             default:
-                console.log('pb')
+                setBackgroundColor('bg-color-yellow')
         }
     }
   

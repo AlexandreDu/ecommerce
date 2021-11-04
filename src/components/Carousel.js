@@ -15,7 +15,7 @@ const Carousel = ({changeBackgroundColor, homeBackgroundColor}) => {
     useEffect(()=> {
         // we lift the state up to Home in order to change the background-color (of home)
         changeBackgroundColor(currentIndexPicture)
-    }, [currentIndexPicture])
+    }, [changeBackgroundColor, currentIndexPicture])
 
 
     const getNextPicture = () => {
