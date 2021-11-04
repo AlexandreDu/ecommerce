@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-
-
-
 import dataImageSlider from '../api/dataImageSlider'
 
 const Carousel = ({changeBackgroundColor, homeBackgroundColor}) => {
@@ -13,7 +10,7 @@ const Carousel = ({changeBackgroundColor, homeBackgroundColor}) => {
 
 
     useEffect(()=> {
-        // we lift the state up to Home in order to change the background-color (of home)
+        
         changeBackgroundColor(currentIndexPicture)
     }, [changeBackgroundColor, currentIndexPicture])
 
@@ -42,7 +39,7 @@ const Carousel = ({changeBackgroundColor, homeBackgroundColor}) => {
                     {currentIndexPicture === index && <>
                         <img className="carousel-main-picture" src={process.env.PUBLIC_URL + `/images/carousel/${data}`} alt={data}/>
                     </>}   
-                    {/* render the other images with display none */}                     
+                    {/* reder des autres images en display none */}                     
                     <img className="hide" src={process.env.PUBLIC_URL + `/images/carousel/${data}`} alt={data}/>
                 </div>
             )
@@ -53,7 +50,7 @@ const Carousel = ({changeBackgroundColor, homeBackgroundColor}) => {
     return (
         <section className="carousel">
             <h2><span className="size-font-high">Retrouvez</span> vos marques préférées</h2>
-            {/* the bg-color changes according to the background of home (via props) */}
+            {/* le bg-color change en fonction du background de la home (via props) */}
             <span onClick={() => getPrevPicture()} className={`previous-button ${homeBackgroundColor}`}><FontAwesomeIcon icon={faArrowLeft} /></span>
             {getAllPicturesForCarousel()}
             <span onClick={() => getNextPicture()} className="next-button"><FontAwesomeIcon icon={faArrowRight} /></span>

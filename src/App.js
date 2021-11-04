@@ -1,6 +1,5 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-
 import './App.css';
 import Navbar from './app/Navbar'
 import FetchData from './features/products/FetchData';

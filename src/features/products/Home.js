@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Carousel from '../../components/Carousel';
 import Theme from '../products/Theme';
 
 const Home = () => {
-
-
 
     const [backgroundColor, setBackgroundColor] = useState('bg-color-yellow')
 

@@ -11,11 +11,8 @@ const Counter = ({product}) => {
 
   const formatCount = product.quantity
   
-
   const priceWithLimitedDecimals = product.price * product.quantity.toFixed(2)    
     
-  
-
   const handleClick = (product, action) => {
     if(action === 'add') {
       dispatch(addProduct(product))

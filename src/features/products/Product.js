@@ -1,6 +1,5 @@
 import React, {useRef, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { faStar } from '@fortawesome/free-solid-svg-icons'

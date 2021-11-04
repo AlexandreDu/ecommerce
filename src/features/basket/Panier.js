@@ -2,10 +2,7 @@ import React from "react";
 import Counter from "./Counter";
 import { useSelector } from 'react-redux';
 import { selectAllProductsBasket, selectTotalPriceBasket } from "./basketSlice";
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const Panier = () => {
 
@@ -14,7 +11,6 @@ const Panier = () => {
 
   return (
     <>
-      
         <div className="basket-wrapper">
           {productsInBasket.length > 0 
           ? <TransitionGroup className="todo-list" component={null}>
@@ -31,8 +27,7 @@ const Panier = () => {
                     <Counter
                       product={product}
                     />
-                  </CSSTransition>
-                
+                  </CSSTransition> 
               ) 
             })
           }
