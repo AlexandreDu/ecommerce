@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 import './App.css';
-import Navbar from './components/Navbar'
+import Navbar from './app/Navbar'
 import FetchData from './features/products/FetchData';
 import Home from './features/products/Home';
 import Panier from './features/basket/Panier';
@@ -10,7 +10,7 @@ import Electronics from './features/products/Electronics';
 import Jewelery from './features/products/Jewelery';
 import MenClothing from './features/products/MenClothing';
 import WomenClothing from './features/products/WomenClothing';
-import Footer from './containers/Footer';
+import Footer from './app/Footer';
 
 function App() {
   return (

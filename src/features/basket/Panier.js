@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Counter from "./Counter";
 import { useSelector } from 'react-redux';
 import { selectAllProductsBasket, selectTotalPriceBasket } from "./basketSlice";
-// import Order from "./Order";
+import {
+  CSSTransition,
+  TransitionGroup,
+} from 'react-transition-group';
 
 const Panier = () => {
 
@@ -14,15 +17,26 @@ const Panier = () => {
       
         <div className="basket-wrapper">
           {productsInBasket.length > 0 
-          ? productsInBasket.map((product, index) => {
+          ? <TransitionGroup className="todo-list" component={null}>
+          {
+            productsInBasket.map((product) => {
 
-            return (
-              <Counter
-                key={index}
-                product={product}
-              />
-            ) 
-          })       
+              return (
+                
+                  <CSSTransition
+                    key={product.id}
+                    timeout={300}
+                    classNames="opacite"
+                  >
+                    <Counter
+                      product={product}
+                    />
+                  </CSSTransition>
+                
+              ) 
+            })
+          }
+          </TransitionGroup>  
           : <div>
               <p className="basket-alert">Votre panier est vide.</p>
             </div>

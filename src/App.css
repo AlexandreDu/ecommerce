@@ -397,19 +397,19 @@ border : 3px solid white;
   transition: opacity 300ms ease-in;
   color: red;
 
-  
 }
 
 /* basket */
 .basket-wrapper {
   background-color: #ffffff;
-  margin-left: 30px;
   margin-right: 30px;
+  margin-top: 40px;
+  margin-left: 30px;
+  
 }
 .product-basket-wrapper {
   border-top: 1px solid #ff1744;
-  display:flex;
-  margin-top: 20px;
+  display: flex;
 }
 .product-basket-infos-warpper, .product-basket-image-wrapper {
   padding:20px;
@@ -461,7 +461,6 @@ border : 3px solid white;
   border-top: 2px solid #ff1744;
   color: #ff1744;
 }
-
 .basket-cta {
   display: block;
   width: 300px;
@@ -473,57 +472,23 @@ border : 3px solid white;
   cursor: pointer;
   font-weight: bold;
 }
+/* .opacite-appear {
+  opacity: 0;
 
-/* order popUp */
-.order-form {
-  width: 700px;
-  padding: 40px;
-  margin: 20px auto;
-  background-color: #ffffff;
-  border: 1px solid #ff1744;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform:translateX(-350px);
-  font-size: 1.5rem;
-  /* box-shadow: 2px 2px 1px #ff1744; */
 }
-.order-title {
-  text-align: center;
+.opacite-appear-done {
+  opacity: 1;
+  transition: opacity 300ms;
+} */
+
+.opacite-exit {
+  opacity: 1;
 }
-.cross-order-form-wrapper{
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  color: #ff1744;
-  cursor: pointer;
+.opacite-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
 }
-.order-input {
-  width: 300px;
-  margin: 20px auto;
-  display: block;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-color: #ff1744;
-}
-.order-input::placeholder {
-  color: #ff1744; 
-  font-weight: bold;
-}
-/* to remove the arrows from input number for Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-/* for Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-.blur-effect {
-  filter: blur(3px);
-}
+
 
 @media screen and (max-width: 1367px) {
   .products-list {
@@ -792,17 +757,6 @@ input[type=number] {
     min-width: inherit;
     width: 100%;
   }
-  /* basket */
-
-  /* order popUp */
-  .order-form {
-    width: 320px;
-    padding: 10px;
-    margin: 0px auto;
-    top: 55%;
-    transform:translateX(-50%);
-    
-  }
 }
 
 @media screen and (max-width: 320px) {
@@ -813,26 +767,7 @@ input[type=number] {
   .carousel {
     width: 300px;
   }
-  
   .theme {
     padding: 0;
   }
-
-  /* order popUp */
-  .order-form {
-    width: 250px;
-    height: 300px;
-    left: 10%;
-    bottom: 0%;
-    font-size: 1rem;
-    transform:translateX(13%);
-    transform:translateY(15%);
-  }
-  .order-input {
-    width: 200px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-  }
-
-
 }
