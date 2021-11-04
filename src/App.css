@@ -281,7 +281,7 @@ border : 3px solid white;
 
 /* productsList component */
 .products-list {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -296,8 +296,8 @@ border : 3px solid white;
   left: 50%;
 }
 .product {
-  width: 32.5%;
-  height: 550px;
+  width: 30.5%;
+  height: 600px;
   /* border: 1px solid #ff1744; */
   box-shadow: 2px 2px 1px #ff1744;
   border-radius: 2px;
@@ -307,7 +307,7 @@ border : 3px solid white;
   margin-bottom: 10px;
 }
 .product-title {
-  height: 60px;
+  height: 90px;
 }
 .product-title h3 {
   margin-top: 0;
@@ -325,9 +325,15 @@ border : 3px solid white;
   margin: 0 auto;
 }
 .product-description-wrapper {
-  height: 110px;
+  height: 120px;
   line-height: 22px;
   word-break: break-word;
+}
+.product-description {
+  margin-top: 0;
+}
+.product-rate {
+  padding-top: 20px;
 }
 .product-price {
   font-weight: bold;
@@ -340,7 +346,7 @@ border : 3px solid white;
 }
 .product-cta {
   display: block;
-  width: 40%;
+  width: 60%;
   padding: 15px;
   margin: 0 auto;
   background-color: #ff1744;
@@ -472,14 +478,6 @@ border : 3px solid white;
   cursor: pointer;
   font-weight: bold;
 }
-/* .opacite-appear {
-  opacity: 0;
-
-}
-.opacite-appear-done {
-  opacity: 1;
-  transition: opacity 300ms;
-} */
 
 .opacite-exit {
   opacity: 1;
@@ -489,7 +487,6 @@ border : 3px solid white;
   transition: opacity 300ms;
 }
 
-
 @media screen and (max-width: 1367px) {
   .products-list {
     width: 80%;
@@ -497,7 +494,13 @@ border : 3px solid white;
   }
   /* product component */
   .product {
-    width: 49%;
+    width: 48%;
+    height: 550px;
+  }
+  .product-rate {
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
   
 
@@ -618,7 +621,9 @@ border : 3px solid white;
   .product:nth-child(2n) {
     margin-right: 0;
   }
-
+  .product-cta {
+    width: 100%;
+  }
   /* basket */
   .product-basket-image-wrapper {
     width: 280px;
@@ -648,6 +653,14 @@ border : 3px solid white;
   main {
     padding-top: 80px;
   }
+
+  /* Product */
+  .product {
+    height: 565px;
+  }
+  .product-rate {
+    padding-top: 20px;
+  }
   /* basket */
   .product-basket-title {
     min-width: 280px;
@@ -668,7 +681,33 @@ border : 3px solid white;
 
 }
 
+@media screen and (min-width: 540px) and (max-width: 681px) {
+  /* Product */
+  .product {
+    height: 610px;
+  }
+  .product-title {
+    height: 100px;
+  }
+  .product-description-wrapper {
+    height: 160px;
+  }
+}
 
+
+@media screen and (max-width: 540px) {
+  /* Product */
+  .product {
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+  }
+  .product-description-wrapper {
+    height: auto;
+  }
+}
 /* surface duo and smart phones */
 @media screen and (max-width: 540px) {
   /* navbar */

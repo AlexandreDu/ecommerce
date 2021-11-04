@@ -52,7 +52,7 @@ const Product = ({title, imageSrc, description, rating, price, product}) => {
                     {description.length > 180 ? description.substring(0, 180) + "..." : description}
                 </p>
             </div>
-            <p>{getNumberOfStars(Math.round(rating.rate))}</p>
+            <p className="product-rate">{getNumberOfStars(Math.round(rating.rate))}</p>
             <p className="product-price">{price.toFixed(2)}€</p>
             <div className="product-cta-wrapper">
                 <span className="product-cta" onClick={() => {handleClickAdd(product)}}>Ajouter au panier</span>
