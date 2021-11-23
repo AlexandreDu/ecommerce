@@ -362,7 +362,7 @@ border : 3px solid white;
   height: 20px;
   border-radius: 50%;
   position: absolute;
-  left: 68%;
+  left: 76.5%;
   top: 0;
   text-align: center;
   font-weight: bold;
@@ -386,7 +386,7 @@ border : 3px solid white;
 .product-cta-on-exit-active {
   display:block;
   position: absolute;
-  left: 68.5%;
+  left: 76.5%;
   top: 0;
   opacity: 1;
   transition: opacity 300ms ease-in;
@@ -397,7 +397,7 @@ border : 3px solid white;
 .product-cta-on-exit-done {
   display:block;
   position: absolute;
-  left: 68.5%;
+  left: 76.5%;
   top: 0;
   opacity: 0;
   transition: opacity 300ms ease-in;
@@ -624,6 +624,17 @@ border : 3px solid white;
   .product-cta {
     width: 100%;
   }
+  .product-quantity-circle {
+    left: 98%;
+  }
+  .product-cta-on-exit-active {
+    left: 98%;
+
+  }
+  .product-cta-on-exit-done {
+    left: 98%;
+  }
+  
   /* basket */
   .product-basket-image-wrapper {
     width: 280px;
